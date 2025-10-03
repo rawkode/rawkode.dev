@@ -1,0 +1,84 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "rawkode-dev",
+  "main": "dist/_worker.js/index.js",
+  "compatibility_date": "2025-09-27",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "build": {
+    "command": "bun run build:cf",
+    "cwd": "."
+  },
+  "routes": [
+    {
+      "custom_domain": true,
+      "pattern": "rawkode.dev"
+    }
+  ],
+  "vars": {
+    "ENVIRONMENT": "production",
+    "PDS_MAX_BLOB_SIZE": "5242880",
+    "PDS_ALLOWED_MIME": "image/jpeg,image/png,image/webp,image/gif,image/avif",
+    "PDS_CORS_ORIGIN": "https://rawkode.dev",
+    "PDS_DID": "did:plc:35bdlgus7hihmup66o265nuy",
+    "PDS_HANDLE": "rawkode.dev",
+    "PDS_HOSTNAME": "rawkode.dev",
+    "JWT_ALGORITHM": "EdDSA"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "alteran",
+      "database_id": "84b53783-c989-4833-87c7-b97ed6705598",
+      "migrations_dir": "./node_modules/@alteran/astro/migrations"
+    }
+  ],
+  "r2_buckets": [
+    {
+      "binding": "BLOBS",
+      "bucket_name": "alteran"
+    }
+  ],
+  "durable_objects": {
+    "bindings": [
+      { "name": "SEQUENCER", "class_name": "Sequencer" }
+    ]
+  },
+  "secrets_store_secrets": [
+    {
+      "binding": "ACCESS_TOKEN_SECRET",
+      "store_id": "06ecefb0fca64804b176f01f79d28c67",
+      "secret_name": "alteran-access-token"
+    },
+    {
+      "binding": "REFRESH_TOKEN_SECRET",
+      "store_id": "06ecefb0fca64804b176f01f79d28c67",
+      "secret_name": "alteran-refresh-token"
+    },
+    {
+      "binding": "REPO_SIGNING_KEY",
+      "store_id": "06ecefb0fca64804b176f01f79d28c67",
+      "secret_name": "alteran-signing-key"
+    },
+    {
+      "binding": "REPO_SIGNING_PUBLIC_KEY",
+      "store_id": "06ecefb0fca64804b176f01f79d28c67",
+      "secret_name": "alteran-signing-key-public"
+    },
+    {
+      "binding": "JWT_ED25519_PRIVATE_KEY",
+      "store_id": "06ecefb0fca64804b176f01f79d28c67",
+      "secret_name": "alteran-jwt-ed25519-private"
+    },
+    {
+      "binding": "JWT_ED25519_PUBLIC_KEY",
+      "store_id": "06ecefb0fca64804b176f01f79d28c67",
+      "secret_name": "alteran-jwt-ed25519-public"
+    }
+  ],
+  "migrations": [
+    { "tag": "v1", "new_classes": ["Sequencer"] }
+  ],
+  "observability": { "enabled": true }
+}

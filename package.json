@@ -1,15 +1,16 @@
 {
-  "name": "",
+  "name": "rawkode-dev",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
+    "build:cf": "astro build && bun scripts/patch-cf-dist.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@alteran/astro": "^0.1.0",
+    "@alteran/astro": "0.1.7",
     "@astrojs/cloudflare": "^12.6.9",
     "astro": "^5.14.1"
   }
