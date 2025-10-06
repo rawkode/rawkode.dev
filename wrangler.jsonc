@@ -45,38 +45,6 @@
       { "name": "SEQUENCER", "class_name": "Sequencer" }
     ]
   },
-  "secrets_store_secrets": [
-    {
-      "binding": "ACCESS_TOKEN_SECRET",
-      "store_id": "06ecefb0fca64804b176f01f79d28c67",
-      "secret_name": "alteran-access-token"
-    },
-    {
-      "binding": "REFRESH_TOKEN_SECRET",
-      "store_id": "06ecefb0fca64804b176f01f79d28c67",
-      "secret_name": "alteran-refresh-token"
-    },
-    {
-      "binding": "REPO_SIGNING_KEY",
-      "store_id": "06ecefb0fca64804b176f01f79d28c67",
-      "secret_name": "alteran-signing-key"
-    },
-    {
-      "binding": "JWT_ED25519_PRIVATE_KEY",
-      "store_id": "06ecefb0fca64804b176f01f79d28c67",
-      "secret_name": "alteran-jwt-ed25519-private"
-    },
-    {
-      "binding": "JWT_ED25519_PUBLIC_KEY",
-      "store_id": "06ecefb0fca64804b176f01f79d28c67",
-      "secret_name": "alteran-jwt-ed25519-public"
-    },
-    {
-      "binding": "USER_PASSWORD",
-      "store_id": "06ecefb0fca64804b176f01f79d28c67",
-      "secret_name": "alteran-user-password"
-    }
-  ],
   "migrations": [
     { "tag": "v1", "new_classes": ["Sequencer"] }
   ],

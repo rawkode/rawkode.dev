@@ -7,9 +7,7 @@ export default defineConfig({
   adapter: cloudflare({
     mode: 'advanced',
     workerEntryPoint: {
-      // Use the adapter's default server entrypoint to provide `createExports`
-      // while also exposing our Durable Object named export(s).
-      path: '@astrojs/cloudflare/entrypoints/server.js',
+      path: './src/_worker.ts',
       namedExports: ['Sequencer'],
     },
   }),

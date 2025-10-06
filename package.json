@@ -5,12 +5,12 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "build:cf": "astro build && bun scripts/patch-cf-dist.mjs",
+    "build:cf": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "@alteran/astro": "0.1.8",
+    "@alteran/astro": "file:../../alteran-dev/alteran",
     "@astrojs/cloudflare": "^12.6.9",
     "astro": "^5.14.1"
   }
