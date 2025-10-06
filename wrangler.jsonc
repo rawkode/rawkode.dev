@@ -33,9 +33,9 @@
     {
       "binding": "DB",
       "database_name": "alteran",
-      "database_id": "84b53783-c989-4833-87c7-b97ed6705598",
-      "migrations_dir": "./node_modules/@alteran/astro/migrations",
-    },
+      "database_id": "6c118754-1e6f-414d-9ae9-0a518bb41fbb",
+      "migrations_dir": "./node_modules/@alteran/astro/migrations"
+    }
   ],
   "r2_buckets": [
     {
