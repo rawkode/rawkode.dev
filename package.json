@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@alteran/astro": "file:../../alteran-dev/alteran",
+    "@alteran/astro": "file://../../alteran-dev/alteran",
     "@astrojs/cloudflare": "^12.6.9",
     "astro": "^5.14.1"
   }

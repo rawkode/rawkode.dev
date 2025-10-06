@@ -3,18 +3,20 @@
   "name": "rawkode-dev",
   "main": "dist/_worker.js/index.js",
   "compatibility_date": "2025-09-27",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./dist",
+  },
   "build": {
     "command": "bun run build:cf",
-    "cwd": "."
+    "cwd": ".",
   },
   "routes": [
     {
       "custom_domain": true,
-      "pattern": "rawkode.dev"
-    }
+      "pattern": "rawkode.dev",
+    },
   ],
   "vars": {
     "ENVIRONMENT": "production",
@@ -24,26 +26,25 @@
     "PDS_DID": "did:plc:35bdlgus7hihmup66o265nuy",
     "PDS_HANDLE": "rawkode.dev",
     "PDS_HOSTNAME": "rawkode.dev",
-    "JWT_ALGORITHM": "EdDSA"
+    "JWT_ALGORITHM": "EdDSA",
+    "REPO_SIGNING_KEY_PUBLIC": "CB2sjGvWonrrW/5kXvnOPf0v3U2fxYmU82REIw89h/w="
   },
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "alteran",
       "database_id": "84b53783-c989-4833-87c7-b97ed6705598",
-      "migrations_dir": "./node_modules/@alteran/astro/migrations"
-    }
+      "migrations_dir": "./node_modules/@alteran/astro/migrations",
+    },
   ],
   "r2_buckets": [
     {
       "binding": "BLOBS",
-      "bucket_name": "alteran"
-    }
+      "bucket_name": "alteran",
+    },
   ],
   "durable_objects": {
-    "bindings": [
-      { "name": "SEQUENCER", "class_name": "Sequencer" }
-    ]
+    "bindings": [{ "name": "SEQUENCER", "class_name": "Sequencer" }],
   },
   "migrations": [
     { "tag": "v1", "new_classes": ["Sequencer"] }
